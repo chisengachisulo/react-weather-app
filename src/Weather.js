@@ -7,8 +7,8 @@ import "./Weather.css";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-  function handleResponse(response) {
-    console.log(response.data);
+  function handleResponse(response) { 
+
     setWeatherData({
       ready: true,
       coordinates:response.data.coordinates,
@@ -18,7 +18,7 @@ export default function Weather(props) {
       date: new Date(response.data.time * 1000),
       description: response.data.condition.description,
       city: response.data.city,
-      icon: response.data.icon
+      icon: response.data.condition.icon
     });
   }
 
